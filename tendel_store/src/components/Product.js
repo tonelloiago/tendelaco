@@ -24,12 +24,14 @@ const Product = ({ product }) => {
         <Card className={classes.root}>
             
             <CardContent>
+                
                 <div className={classes.CardContent}>
                     <Typography variant='h5' gutterBottom>
                         {product.name}
                     </Typography>
 
                 </div>
+
                 <Typography variant='body2' color="textSecondary">
                     {product.description}
                 </Typography>

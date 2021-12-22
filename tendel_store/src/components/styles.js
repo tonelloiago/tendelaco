@@ -4,11 +4,9 @@ export default makeStyles((theme) => ({
     root: {
         maxWidth: '100%',
         display: 'flex',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        marginTop: "1rem"
     },
-    CardActions: {
-    },
-
     CardContent: {
         display: 'flex',
         justifyContent: 'space-between',
@@ -17,9 +15,7 @@ export default makeStyles((theme) => ({
         width: "4rem"
     },
     fab: {
-        margin: theme.spacing.unit * 0,
+        margin: theme.spacing.unit * 0.3,
     },
-
-
 
 }));
