@@ -3,6 +3,9 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
 import Ticket from '../Components/Ticket/Ticket';
+import Event from '../Components/Event/Event';
+
+import Tendel from '../tendel.jpg';
 
 import useStyles from './styles';
 
@@ -23,30 +26,40 @@ const Store = () => {
 
         <div className={classes.root}>
 
-        <Grid container spacing={12}>
+          <Grid container spacing={12} className={classes.grid}>
 
-          <Grid item xs={12}>
-            <Paper className={classes.paper}>xs=12</Paper>
+            <Grid item xs={12} sm={10}>
+              <Paper className={classes.paper}>
+
+              
+
+              </Paper>
+            </Grid>
+
+            <Grid item xs={12} sm={5}>
+              <Paper className={classes.paper}>
+
+
+                <Event></Event>
+
+
+              </Paper>
+            </Grid>
+            
+            <Grid item xs={12} sm={5}>
+              <Paper className={classes.paper}>
+
+                  { tickets.map((ticket) => (
+
+                    <Ticket ticket={ticket}></Ticket>
+
+                  ))}
+
+              </Paper>
+
+            </Grid>
+
           </Grid>
-
-          <Grid item xs={12} sm={6}>
-            <Paper className={classes.paper}>xs=12 sm=6</Paper>
-          </Grid>
-          
-          <Grid item xs={12} sm={6}>
-            <Paper className={classes.paper}>
-
-                { tickets.map((ticket) => (
-
-                  <Ticket ticket={ticket}></Ticket>
-
-                ))};
-
-            </Paper>
-
-          </Grid>
-
-        </Grid>
 
       </div>
     );

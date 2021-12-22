@@ -5,7 +5,7 @@ export default makeStyles((theme) => ({
         maxWidth: '100%',
         display: 'flex',
         justifyContent: 'space-between',
-        marginTop: "1rem"
+        marginBottom: "0.1rem"
     },
     CardContent: {
         display: 'flex',

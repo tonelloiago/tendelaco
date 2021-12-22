@@ -21,9 +21,10 @@ const Ticket = ({ ticket }) => {
     };
 
     return (
+        
         <Card className={classes.root}>
             
-            <CardContent>
+            <CardContent >
 
                 <div className={classes.CardContent}>
                     <Typography variant='h5' gutterBottom>
@@ -40,7 +41,6 @@ const Ticket = ({ ticket }) => {
 
             <CardActions disableSpacing className={classes.CardActions}>
 
-            
                 <Fab color="secondary" size="small" className={classes.fab} onClick={() => {
 
                     if (count > 0) {
@@ -48,7 +48,9 @@ const Ticket = ({ ticket }) => {
                     };
 
                 }}>
+
                     <RemoveIcon />
+                
                 </Fab>
 
                 <TextField
@@ -62,8 +64,7 @@ const Ticket = ({ ticket }) => {
                 <Fab color="secondary" size="small" className={classes.fab} onClick={() => setCount(count + 1)}>
                     <AddIcon />
                 </Fab>
-
-            
+                
             </CardActions>
         </Card>
 
