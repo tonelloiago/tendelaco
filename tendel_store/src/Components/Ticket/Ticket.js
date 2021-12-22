@@ -1,5 +1,5 @@
 import { React, useState } from 'react';
-import { Card, CardMedia, CardContent, CardActions, Typography, IconButton, Button } from '@material-ui/core';
+import { Card, CardContent, CardActions, Typography } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
 import Fab from '@material-ui/core/Fab';
@@ -7,7 +7,7 @@ import TextField from '@material-ui/core/TextField';
 
 import useStyles from './styles';
 
-const Product = ({ product }) => {
+const Ticket = ({ ticket }) => {
 
     const classes = useStyles();
     const [count, setCount] = useState(0);
@@ -24,16 +24,16 @@ const Product = ({ product }) => {
         <Card className={classes.root}>
             
             <CardContent>
-                
+
                 <div className={classes.CardContent}>
                     <Typography variant='h5' gutterBottom>
-                        {product.name}
+                        {ticket.name}
                     </Typography>
 
                 </div>
 
                 <Typography variant='body2' color="textSecondary">
-                    {product.description}
+                    {ticket.description}
                 </Typography>
 
             </CardContent>
@@ -70,4 +70,4 @@ const Product = ({ product }) => {
     )
 }
 
-export default Product
+export default Ticket
