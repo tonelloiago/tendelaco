@@ -12,6 +12,17 @@ export default makeStyles ((theme: any) => ({
     paper: {
       padding: theme.spacing.unit * 2,
       textAlign: 'center',
-      color: theme.palette.text.secondary,
+      color: theme.palette.text.secondary
     },
-  }));
+    paperRight: {
+      padding: theme.spacing.unit * 2,
+      textAlign: 'center',
+      color: theme.palette.text.secondary,
+      backgroundColor: '#f50057'
+    },
+    betweenItems: {
+      display: "flex",
+      justifyContent: "center",
+
+    }
+}));

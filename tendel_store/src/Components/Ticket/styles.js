@@ -5,14 +5,14 @@ export default makeStyles((theme) => ({
         maxWidth: '100%',
         display: 'flex',
         justifyContent: 'space-between',
-        marginBottom: "0.1rem"
+        marginBottom: "0.1rem",
     },
     CardContent: {
         display: 'flex',
-        justifyContent: 'space-between',
+        justifyContent: 'space-between'
     },
     Quantity :{
-        width: "4rem"
+        width: "3.5rem"
     },
     fab: {
         margin: theme.spacing.unit * 0.3,

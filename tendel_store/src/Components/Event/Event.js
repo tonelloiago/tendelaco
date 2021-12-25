@@ -26,7 +26,7 @@ const Event = () => {
                 <p className={classes.iconAndtext}>
 
                     <Location className={classes.eventIcons}></Location>
-                    Rota 40 Graus - Sananduva/RS
+                    Rota 40 Graus - Sananduva-RS
 
                 </p>
             

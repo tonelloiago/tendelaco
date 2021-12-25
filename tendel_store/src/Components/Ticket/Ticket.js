@@ -27,7 +27,7 @@ const Ticket = ({ ticket }) => {
             <CardContent >
 
                 <div className={classes.CardContent}>
-                    <Typography variant='h5' gutterBottom>
+                    <Typography variant='h6' gutterBottom>
                         {ticket.name}
                     </Typography>
 
