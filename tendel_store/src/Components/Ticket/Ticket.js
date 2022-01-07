@@ -7,7 +7,10 @@ import TextField from '@material-ui/core/TextField';
 
 import useStyles from './styles';
 
-const Ticket = ({ ticket }) => {
+const Ticket = ( props ) => {
+
+
+    console.log(props)
 
     const classes = useStyles();
     const [count, setCount] = useState(0);
@@ -17,6 +20,7 @@ const Ticket = ({ ticket }) => {
 
         if(event.target.value >= 0) {
             setCount(event.target.value)
+            props.setQuantity(count)
         }
     };
 
@@ -28,13 +32,13 @@ const Ticket = ({ ticket }) => {
 
                 <div className={classes.CardContent}>
                     <Typography variant='h6' gutterBottom>
-                        {ticket.name}
+                        {props.name}
                     </Typography>
 
                 </div>
 
                 <Typography variant='body2' color="textSecondary">
-                    {ticket.description}
+                    {props.description}
                 </Typography>
 
             </CardContent>
@@ -61,8 +65,15 @@ const Ticket = ({ ticket }) => {
                     value={count}
                 />
 
-                <Fab color="secondary" size="small" className={classes.fab} onClick={() => setCount(count + 1)}>
+                <Fab color="secondary" size="small" className={classes.fab} onClick={() => {
+
+                    setCount(count + 1)
+                    props.setQuantity(count)
+
+                }}>
+
                     <AddIcon />
+
                 </Fab>
                 
             </CardActions>

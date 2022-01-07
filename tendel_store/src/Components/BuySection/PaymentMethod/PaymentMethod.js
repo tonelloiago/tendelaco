@@ -56,7 +56,7 @@ const PaymentMethod = () => {
                 </RadioGroup>
                 
             </FormControl>
-
+//COLOCAR UM GRID AQUI
             <div className={classes.buyButton}>
                
             <TextField

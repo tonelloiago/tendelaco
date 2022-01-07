@@ -1,4 +1,4 @@
-import React from 'react';
+import { React, useState} from 'react';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
@@ -10,19 +10,23 @@ import Tendel from '../tendel.jpg';
 
 import useStyles from './styles';
 
-const tickets = [
-  { id: 1, name: '1º Lote VIP R$ 60,00', description: ''},
-  { id: 2, name: 'Backstage R$ 80,00', description: ''},
-  { id: 3, name: 'Pista R$ 80,00', description: ''},
-  { id: 4, name: 'Camarote R$ 80,00', description: ''},
-  { id: 5, name: 'Frontstage R$ 80,00', description: ''},
-];
-
-
 const Store = () => {
 
     const classes = useStyles();
 
+    const [vipQtd, setVipQtd] = useState(0);
+    const [backstageQtd, setBackstageQtd] = useState(0);
+    const [pistaQtd, setPistaQtd] = useState(0);
+    const [frontstageQtd, setFrontstageQtd] = useState(0);
+
+    const tickets = [
+      { id: 1, name: '1º Lote VIP R$ 60,00', description: '', quantity: vipQtd, setQuantity: setVipQtd},
+      { id: 2, name: 'Backstage R$ 80,00', description: '', quantity: backstageQtd, setQuantity: setBackstageQtd},
+      { id: 3, name: 'Pista R$ 80,00', description: '', quantity: pistaQtd, setQuantity: setPistaQtd},
+      { id: 5, name: 'Frontstage R$ 80,00', description: '', quantity: frontstageQtd, setQuantity: setFrontstageQtd},
+    ];
+    
+  
     return (
 
         <div className={classes.root}>
@@ -52,12 +56,13 @@ const Store = () => {
 
                       { tickets.map((ticket) => (
                         
-                        <Ticket ticket={ticket}></Ticket>
+                        <Ticket name={ticket.name} description={ticket.description} quantity={ticket.quantity} setQuantity={ticket.setQuantity} ></Ticket>
                         
                         ))}
 
-                    
-                        <Payment></Payment>
+                      <Payment></Payment>
+
+                      
 
                   </Paper>
 
