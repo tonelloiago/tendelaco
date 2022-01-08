@@ -9,10 +9,17 @@ export default makeStyles ((theme: any) => ({
       display: "flex",
       justifyContent: "center"
     },
-    paper: {
-      padding: theme.spacing.unit * 2,
+    paperTop: {
+      width: "100%",
+      height: "5rem",
+      position: "relative",
       textAlign: 'center',
       color: theme.palette.text.secondary
+    },
+    paperLeft: {
+      padding: theme.spacing.unit * 2,
+      textAlign: 'center',
+      color: theme.palette.text.secondary,
     },
     paperRight: {
       padding: theme.spacing.unit * 2,
@@ -23,6 +30,10 @@ export default makeStyles ((theme: any) => ({
     betweenItems: {
       display: "flex",
       justifyContent: "center",
-
+    },
+    banner: {
+       width: "100%",
+       height: "100%",
+       borderRadius: "1rem"
     }
 }));
