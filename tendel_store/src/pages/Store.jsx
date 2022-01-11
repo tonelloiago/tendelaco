@@ -49,15 +49,16 @@ const Store = () => {
     let pista = new TicketClass('Pista R$ 40,00');
     let vip = new TicketClass('1º Lote VIP R$ 60,00');
     let backstage = new TicketClass('Backstage R$ 80,00');
-    let frontstage = new TicketClass('Frontstage R$ 80,00');
+    let frontstage = new TicketClass('Frontstage R$ 75,00');
 
 
     let tickets = [
 
       pista,
       vip,
-      backstage,
-      frontstage
+      frontstage,
+      backstage
+      
 
     ];
 
