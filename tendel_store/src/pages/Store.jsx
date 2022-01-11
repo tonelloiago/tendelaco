@@ -59,7 +59,6 @@ const Store = () => {
       frontstage,
       backstage
       
-
     ];
 
     function show() {
