@@ -1,30 +1,88 @@
-import { React, useState} from 'react';
+import { React, useState, useEffect} from 'react';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-
 import Ticket from '../Components/Ticket/Ticket';
 import Event from '../Components/Event/Event';
 import Payment from '../Components/BuySection/PaymentMethod/PaymentMethod';
-
-import Tendel from '../tendel.jpg';
-
 import useStyles from './styles';
+import { Button } from '@material-ui/core';
+
+import api from '../services/api';
+import axios from 'axios';
+
+class TicketClass {
+
+  constructor(name) {
+
+    this.name = name;
+    this.quantity = 0;
+
+  }
+
+  increment() {
+
+    this.quantity += 1;
+    console.log(this.quantity);
+
+  }
+
+  decrement() {
+
+    if(this.quantity > 0) {
+
+      this.quantity -= 1;
+
+    }
+
+    console.log(this.quantity);
+
+  }
+
+
+}
+
 
 const Store = () => {
 
     const classes = useStyles();
 
-    const [vipQtd, setVipQtd] = useState(0);
-    const [backstageQtd, setBackstageQtd] = useState(0);
-    const [pistaQtd, setPistaQtd] = useState(0);
-    const [frontstageQtd, setFrontstageQtd] = useState(0);
+    let pista = new TicketClass('Pista R$ 40,00');
+    let vip = new TicketClass('1º Lote VIP R$ 60,00');
+    let backstage = new TicketClass('Backstage R$ 80,00');
+    let frontstage = new TicketClass('Frontstage R$ 80,00');
 
-    const tickets = [
-      { id: 1, name: '1º Lote VIP R$ 60,00', description: '', quantity: vipQtd, setQuantity: setVipQtd},
-      { id: 2, name: 'Backstage R$ 80,00', description: '', quantity: backstageQtd, setQuantity: setBackstageQtd},
-      { id: 3, name: 'Pista R$ 80,00', description: '', quantity: pistaQtd, setQuantity: setPistaQtd},
-      { id: 5, name: 'Frontstage R$ 80,00', description: '', quantity: frontstageQtd, setQuantity: setFrontstageQtd},
+
+    let tickets = [
+
+      pista,
+      vip,
+      backstage,
+      frontstage
+
     ];
+
+    function show() {
+      console.log(pista.quantity)
+    }
+
+    function onSubmit(ev) {
+
+      const toBuyTickets = {
+
+        "pista": tickets[0].quantity,
+        "vip": tickets[1].quantity,
+        "backstage": tickets[2].quantity,
+        "frontstage": tickets[3].quantity,
+
+      }
+
+      axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
+      axios.post("http://localhost:3030/", toBuyTickets)
+      .then((response) => {
+
+      })
+    
+    }
     
   
     return (
@@ -47,19 +105,21 @@ const Store = () => {
 
                       { tickets.map((ticket) => (
                         
-                        <Ticket name={ticket.name} description={ticket.description} quantity={ticket.quantity} setQuantity={ticket.setQuantity} ></Ticket>
+                        <Ticket ticket={ticket}></Ticket>
                         
                         ))}
 
-                      <Payment></Payment>
+                      <Payment onClick={onSubmit}></Payment>
                       
                   </Paper>
 
               </Grid>
 
             </Grid>
-
+        
         </div>
+
+        
     );
 };
 

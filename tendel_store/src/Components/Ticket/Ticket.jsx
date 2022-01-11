@@ -6,11 +6,11 @@ import Fab from '@material-ui/core/Fab';
 import TextField from '@material-ui/core/TextField';
 
 import useStyles from './styles';
+import { createIncrementalCompilerHost } from 'typescript';
 
-const Ticket = ( props ) => {
+const Ticket = ( ticket ) => {
 
-
-    console.log(props)
+    console.log(ticket.ticket)
 
     const classes = useStyles();
     const [count, setCount] = useState(0);
@@ -18,9 +18,10 @@ const Ticket = ( props ) => {
 
     const handleChange = (event) => {
 
+        event.preventDefault()
         if(event.target.value >= 0) {
-            setCount(event.target.value)
-            props.setQuantity(count)
+            setCount(Number(event.target.value))
+            
         }
     };
 
@@ -32,13 +33,13 @@ const Ticket = ( props ) => {
 
                 <div className={classes.CardContent}>
                     <Typography variant='h6' gutterBottom>
-                        {props.name}
+                        {ticket.ticket.name}
                     </Typography>
 
                 </div>
 
                 <Typography variant='body2' color="textSecondary">
-                    {props.description}
+                    {/* {ticket.description} */}
                 </Typography>
 
             </CardContent>
@@ -46,10 +47,14 @@ const Ticket = ( props ) => {
             <CardActions disableSpacing className={classes.CardActions}>
 
                 <Fab color="secondary" size="small" className={classes.fab} onClick={() => {
+                    
+                    if(ticket.ticket.quantity > 0) {
 
-                    if (count > 0) {
-                        setCount(count - 1);
-                    };
+                        ticket.ticket.quantity -= 1
+                        setCount(count - 1)
+
+                    }
+
 
                 }}>
 
@@ -67,8 +72,8 @@ const Ticket = ( props ) => {
 
                 <Fab color="secondary" size="small" className={classes.fab} onClick={() => {
 
+                    ticket.ticket.quantity += 1
                     setCount(count + 1)
-                    props.setQuantity(count)
 
                 }}>
 

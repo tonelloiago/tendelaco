@@ -12,7 +12,7 @@ import { Button, TextField } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 
 
-const PaymentMethod = () => {
+const PaymentMethod = ( props ) => {
 
     const classes = useStyles();
     const [method, setMethod] = useState('pix');
@@ -57,7 +57,7 @@ const PaymentMethod = () => {
                 </Grid>
 
                 <Grid item xs={12} sm={5} className={classes.buyButton}>
-                    <Button variant="contained" color="secondary">Comprar</Button>
+                    <Button variant="contained" color="secondary" onClick={props.onClick}>Comprar</Button>
                 </Grid>
             </Grid> 
         </div>

@@ -41,7 +41,7 @@ const PurchaseController = {
             }
 
             const totalToPay = totalPurchase.calculateTicketsPrice(toCalculate);
-
+            console.log(totalToPay)
             res.status(200).json({ toPay: totalToPay })
 
         }catch(error) {
