@@ -1,7 +1,7 @@
 # Case - Tendelaco Ticket Sales Service
 
 ## Description
-Tendelaco is a party organized by nine friends in Sananduva, RS, Brazil. The event has had five editions, attracting approximately five thousand attendees. Until the fourth edition, tickets were sold through WhatsApp and Instagram, with sales recorded in a Google Sheets table. However, for the fifth edition, the group decided to develop an online store to automate ticket sales and delivery. Two members, both software developers, designed and implemented the project, which is shown below.
+Tendelaco is a party organized by nine friends in Sananduva, RS, Brazil. The event has had five editions, attracting approximately five thousand attendees. Until the fourth edition, tickets were sold through WhatsApp and Instagram, with sales recorded in a Google Sheets table. However, for the fifth edition, the group decided to develop an online store to automate ticket sales and delivery. Two members (me and @felipecostazucco), both software developers, designed and implemented the project, which is shown below.
 
 ## Architecture
 
